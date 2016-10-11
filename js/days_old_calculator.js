@@ -1,7 +1,7 @@
-var makeNosedownCounter = function() {
+var makeDaysOldCalculator = function() {
   var myCookieGUID;
-  var cookieName = 'push-up-cookie';
-  var privateNosedownCounter = 0;
+  var cookieName = 'days-old-cookie';
+  var privateDaysOldCalculator = 0;
 
   Parse.initialize(config.app_id, config.js_key);
   if(docCookies.hasItem(cookieName)) {
@@ -11,23 +11,23 @@ var makeNosedownCounter = function() {
     docCookies.setItem(cookieName,myCookieGUID);
   }
   return {
-    doNosedown: function() {
-      privateNosedownCounter++;
+    doDaysOld: function() {
+      privateDaysOldCalculator++;
     },
-    saveNosedowns: function() {
+    saveDaysOlds: function() {
       var PushupsPerformedBy = Parse.Object.extend("PushupsPerformedBy");
       var myPushupCounts = new PushupsPerformedBy();
-      myPushupCounts.save({guid: myCookieGUID, pushups:privateNosedownCounter}, {
+      myPushupCounts.save({guid: myCookieGUID, pushups:privateDaysOldCalculator}, {
         success: function(object) {
-          privateNosedownCounter = 0;
+          privateDaysOldCalculator = 0;
         },
         error: function(model, error) {
           $(".error").show();
         }
       });
     },
-    getNosedowns: function() {
-      return privateNosedownCounter;
+    getDaysOlds: function() {
+      return privateDaysOldCalculator;
     }
   }
 };
