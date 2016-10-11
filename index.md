@@ -5,7 +5,7 @@ tags: [ "js", "days" ]
 categories:
   - "JS"
   - "Days"
-url: "days-old"
+#hurl: "days-old"
 date: 2016-10-11T23:23:55+09:00
 ---
 
