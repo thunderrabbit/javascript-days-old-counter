@@ -1,33 +1,34 @@
 var makeDaysOldCalculator = function() {
-  var myCookieGUID;
-  var cookieName = 'days-old-cookie';
-  var privateDaysOldCalculator = 0;
+  var myBirthDate;
+  var cookieName = 'days-old-birthdate';
+  var privateDaysOldCalculation = 0;
+  var todaysDate = new Date();
 
-  Parse.initialize(config.app_id, config.js_key);
+  var birthdateField, TodaysDateField, DaysOldField;
+
   if(docCookies.hasItem(cookieName)) {
-    myCookieGUID = docCookies.getItem(cookieName);
+    myBirthDate = docCookies.getItem(cookieName);
   } else {
-    myCookieGUID = guid();
-    docCookies.setItem(cookieName,myCookieGUID);
+    myBirthDate = '1981 May 15';
+    docCookies.setItem(cookieName,myBirthDate);
   }
   return {
-    doDaysOld: function() {
-      privateDaysOldCalculator++;
+    setup: function(birthdateFieldID, TodaysDateFieldID, DaysOldFieldID) {
+      birthdateField = document.getElementById(birthdateFieldID);
+      birthdateField.value=myBirthDate;
     },
-    saveDaysOlds: function() {
-      var PushupsPerformedBy = Parse.Object.extend("PushupsPerformedBy");
-      var myPushupCounts = new PushupsPerformedBy();
-      myPushupCounts.save({guid: myCookieGUID, pushups:privateDaysOldCalculator}, {
-        success: function(object) {
-          privateDaysOldCalculator = 0;
-        },
-        error: function(model, error) {
-          $(".error").show();
-        }
-      });
+    calculateDaysOld: function() {
+      privateDaysOldCalculation = todaysDate;
     },
     getDaysOlds: function() {
-      return privateDaysOldCalculator;
+      return privateDaysOldCalculation;
     }
   }
 };
+
+/* begin I wanted this to be in the index.md file, where the ids are defined, but Hugo tries to process it as html */
+var DaysOldCalculator = makeDaysOldCalculator();
+
+DaysOldCalculator.setup('startDate');
+
+/* end I wanted this to be in the index.md file, where the ids are defined, but Hugo tries to process it as html */
