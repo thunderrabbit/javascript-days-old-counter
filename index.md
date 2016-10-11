@@ -16,5 +16,7 @@ date: 2016-10-11T23:23:55+09:00
 	<input id="endDate" type="text" placeholder="today's date" />
 </form>
 
+<div id="daysOld"></div>
+
 <script type="text/javascript" src="js/cookies.js"></script>
 <script type="text/javascript" src="js/days_old_calculator.js"></script>
