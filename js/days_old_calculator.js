@@ -27,9 +27,6 @@ var makeDaysOldCalculator = function() {
       var startDate = birthdateField.value;
       var endDate = todaysDateField.value;
       daysOldField.innerHTML=rDate.getDiffDays(startDate, endDate);
-    },
-    getDaysOlds: function() {
-      return privateDaysOldCalculation;
     }
   }
 };
