@@ -28,6 +28,9 @@ var makeDaysOldCalculator = function() {
       // from now on, we will read user-inputted values from the form
       birthdateField.value=myBirthDate;
       todaysDateField.value=todaysDate;
+
+      birthdateField.oninput = _calcDaysOld;
+      todaysDateField.oninput = _calcDaysOld;
     },
     calculateDaysOld: _calcDaysOld
 
