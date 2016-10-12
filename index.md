@@ -9,7 +9,7 @@ categories:
 date: 2016-10-11T23:23:55+09:00
 ---
 
-## (Days old counter goes here (in the future (I hope)))
+## Proof of concept of days old counter
 
 <form>
 	<input id="startDate" type="text" placeholder="birth date" />
