@@ -19,4 +19,5 @@ date: 2016-10-11T23:23:55+09:00
 <div id="daysOld"></div>
 
 <script type="text/javascript" src="js/cookies.js"></script>
+<script type="text/javascript" src="js/rDateDiff.min.js"></script>
 <script type="text/javascript" src="js/days_old_calculator.js"></script>
