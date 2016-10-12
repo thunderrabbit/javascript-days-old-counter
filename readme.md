@@ -1,1 +1,1 @@
-# Days old counter (proof of concept)
+# Days old counter (ugly but works)
