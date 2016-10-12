@@ -38,5 +38,5 @@ var makeDaysOldCalculator = function() {
 var DaysOldCalculator = makeDaysOldCalculator();
 
 DaysOldCalculator.setup('startDate','endDate','daysOld');
-
+DaysOldCalculator.calculateDaysOld();
 /* end I wanted this to be in the index.md file, where the ids are defined, but Hugo tries to process it as html */
