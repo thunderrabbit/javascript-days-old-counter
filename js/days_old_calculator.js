@@ -12,6 +12,12 @@ var makeDaysOldCalculator = function() {
     myBirthDate = '08/18/1888';
     docCookies.setItem(cookieName,myBirthDate);
   }
+
+  var _calcDaysOld = function() {
+      var startDate = birthdateField.value;
+      var endDate = todaysDateField.value;
+      daysOldField.innerHTML=rDate.getDiffDays(startDate, endDate);
+    }
   return {
     setup: function(birthdateFieldID, todaysDateFieldID, daysOldFieldID) {
       birthdateField = document.getElementById(birthdateFieldID);
@@ -23,11 +29,8 @@ var makeDaysOldCalculator = function() {
       birthdateField.value=myBirthDate;
       todaysDateField.value=todaysDate;
     },
-    calculateDaysOld: function() {
-      var startDate = birthdateField.value;
-      var endDate = todaysDateField.value;
-      daysOldField.innerHTML=rDate.getDiffDays(startDate, endDate);
-    }
+    calculateDaysOld: _calcDaysOld
+
   }
 };
 
