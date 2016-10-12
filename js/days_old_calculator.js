@@ -17,9 +17,11 @@ var makeDaysOldCalculator = function() {
       birthdateField = document.getElementById(birthdateFieldID);
       todaysDateField = document.getElementById(todaysDateFieldID);
       daysOldField = document.getElementById(daysOldFieldID);
+
+      // this is the only time we will write to the form;
+      // from now on, we will read user-inputted values from the form
       birthdateField.value=myBirthDate;
       todaysDateField.value=todaysDate;
-      daysOldField.innerHTML="hard to know";
     },
     calculateDaysOld: function() {
       privateDaysOldCalculation = todaysDate;
