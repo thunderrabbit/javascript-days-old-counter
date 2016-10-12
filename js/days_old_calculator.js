@@ -2,14 +2,14 @@ var makeDaysOldCalculator = function() {
   var myBirthDate;
   var cookieName = 'days-old-birthdate';
   var privateDaysOldCalculation = 0;
-  var todaysDate = new Date();
+  var todaysDate = "10/09/2016"; // should be new Date(); but I don't know how to format the date yet
 
   var birthdateField, todaysDateField, daysOldField;
 
   if(docCookies.hasItem(cookieName)) {
     myBirthDate = docCookies.getItem(cookieName);
   } else {
-    myBirthDate = '1981 May 15';
+    myBirthDate = '08/18/1888';
     docCookies.setItem(cookieName,myBirthDate);
   }
   return {
