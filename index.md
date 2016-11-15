@@ -1,10 +1,10 @@
 ---
 title: "How many days old am I?"
 description: "How many days old am I?"
-tags: [ "js", "days" ]
+tags: [ "js", "daysold", "code" ]
 categories:
   - "JS"
-  - "Days"
+  - "samples"
 #hurl: "days-old"
 date: 2016-10-11T23:23:55+09:00
 ---
